@@ -38,3 +38,16 @@ class Matriz():
         print("O resultado da soma entre essas duas matrizes é: ")
         Matriz.Mostrar(Soma)
 
+    #Subtrair duas matrizes
+    def Subtrair(self):
+        s = Matriz(self.linhas, self.colunas, matriz=list())
+        matrizSoma = list
+        for i in range(0, s.linhas):
+            linha = list()
+            for j in range(0, s.colunas):
+                item = self.matriz[i][j] - s.matriz[i][j]
+                linha.append(item)
+            matrizSoma.append(linha)
+        Soma = Matriz(self.linhas, self.colunas, matriz = matrizSoma)
+        print("O resultado da subtração entre essas duas matrizes é: ")
+        Matriz.Mostrar(Soma)
