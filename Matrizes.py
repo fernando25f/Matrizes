@@ -7,8 +7,9 @@ class Matriz():
         self.linhas = linhas
         self.colunas = colunas
 
-        #Criando a Matriz
+        # Criar a Matriz Principal
         if matriz == list():
+            print(f"Definindo Matriz {self.linhas}x{self.colunas}:\n")
             for i in range(0, self.linhas):
                 linha = list()
                 for j in range(0, self.colunas):
@@ -23,9 +24,10 @@ class Matriz():
         for l in range(0, self.linhas):
             print(self.matriz[l])
 
-    #Somar duas matrizes
+    # Somar duas matrizes
     def Soma(self):
-        #Definindo a matriz a ser somada
+        # Definir a matriz a ser somada
+        print(f"Definindo Nova Matriz {self.linhas}x{self.colunas}:\n")
         s = Matriz(self.linhas, self.colunas, matriz=list())
         matrizSoma = list
         for i in range(0, s.linhas):
@@ -37,9 +39,12 @@ class Matriz():
         Soma = Matriz(self.linhas, self.colunas, matriz = matrizSoma)
         print("O resultado da soma entre essas duas matrizes é: ")
         Matriz.Mostrar(Soma)
+        return matrizSoma
 
-    #Subtrair duas matrizes
+    # Subtrair duas matrizes
     def Subtrair(self):
+        # Definir a matriz a ser subtraída
+        print(f"Definindo Nova Matriz {self.linhas}x{self.colunas}:\n")
         s = Matriz(self.linhas, self.colunas, matriz=list())
         matrizSoma = list
         for i in range(0, s.linhas):
