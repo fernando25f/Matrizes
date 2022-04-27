@@ -55,3 +55,4 @@ if testeRapido == 0:
         if mudar in "Ss":
             principal = mt(len(resposta), len(resposta[0]), matriz = resposta)
 else:
+    pass
