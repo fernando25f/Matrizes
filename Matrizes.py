@@ -10,9 +10,9 @@ class Matriz():
         # Criar a Matriz Principal
         if matriz == list():
             print(f"Definindo Matriz {self.linhas}x{self.colunas}:\n")
-            for i in range(0, self.linhas):
+            for i in range(self.linhas):
                 linha = list()
-                for j in range(0, self.colunas):
+                for j in range(self.colunas):
                     item = int(input(f"Digite o valor do item [{i+1},{j+1}]: "))
                     linha.append(item)
                 matriz.append(linha)
@@ -21,18 +21,17 @@ class Matriz():
     # Exibir a Matriz
     def Mostrar(self):
         print("Sua matriz é: \n")
-        for l in range(0, self.linhas):
+        for l in range(self.linhas):
             print(self.matriz[l])
 
     # Somar duas matrizes
     def Soma(self):
         # Definir a matriz a ser somada
-        print(f"Definindo Nova Matriz {self.linhas}x{self.colunas}:\n")
         s = Matriz(self.linhas, self.colunas, matriz=list())
-        matrizSoma = list
-        for i in range(0, s.linhas):
+        matrizSoma = list()
+        for i in range(s.linhas):
             linha = list()
-            for j in range(0, s.colunas):
+            for j in range(s.colunas):
                 item = self.matriz[i][j] + s.matriz[i][j]
                 linha.append(item)
             matrizSoma.append(linha)
@@ -44,15 +43,34 @@ class Matriz():
     # Subtrair duas matrizes
     def Subtrair(self):
         # Definir a matriz a ser subtraída
-        print(f"Definindo Nova Matriz {self.linhas}x{self.colunas}:\n")
         s = Matriz(self.linhas, self.colunas, matriz=list())
-        matrizSoma = list
-        for i in range(0, s.linhas):
+        matrizSub = list()
+        for i in range(s.linhas):
             linha = list()
-            for j in range(0, s.colunas):
+            for j in range(s.colunas):
                 item = self.matriz[i][j] - s.matriz[i][j]
                 linha.append(item)
-            matrizSoma.append(linha)
-        Soma = Matriz(self.linhas, self.colunas, matriz = matrizSoma)
+            matrizSub.append(linha)
+        Sub = Matriz(self.linhas, self.colunas, matriz = matrizSub)
         print("O resultado da subtração entre essas duas matrizes é: ")
-        Matriz.Mostrar(Soma)
+        Matriz.Mostrar(Sub)
+        return matrizSub
+
+    # Multiplicar duas matrizes
+    def Multiplicar(self):
+        # Definir a matriz a ser multiplicada 
+        colunas = int(input("Digite a quantidade de colunas da matriz que multiplicará: "))
+        m = Matriz(self.colunas, colunas, matriz=list())
+        matrizMult = list()
+        for i1 in range(self.linhas):
+            linha = list()
+            for j1 in range(self.colunas):
+                s = 0
+                for j2 in range(m.colunas):
+                    s += self.matriz[i1][j2] * m.matriz[j2][j1]
+                linha.append(s)
+            matrizMult.append(linha)
+        Mult = Matriz(self.linhas, colunas, matriz = matrizMult)
+        print("O resultado da subtração entre essas duas matrizes é: ")
+        Matriz.Mostrar(Mult)
+        return matrizMult
